@@ -7,7 +7,13 @@
           <div class="mobile-section">
             <v-select class="country-field" v-model="countryCode" label="Country"
               :items="['+98', '+1', '+49']"></v-select>
-            <v-text-field class="mobile-field" v-model="phoneNumber" label="Mobile" type="number"></v-text-field>
+            <v-text-field
+             class="mobile-field"
+              v-model="phoneNumber"
+               label="Mobile"
+                type="tel"
+                v-mask="'##########'"
+                ></v-text-field>
           </div>
           <v-btn :disabled="countryCode === '' || phoneNumber.length !== 10"
             class="mt-2" color="#5E578A" type="submit" block @click="registerAccount">Submit</v-btn>
@@ -29,6 +35,7 @@
 <script setup>
 import { ref } from 'vue'
 import axios from 'axios'
+
 
 
 const registerSteps = ref({

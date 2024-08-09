@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import VueTheMask from 'vue-the-mask';
 
 // Vuetify
 import 'vuetify/styles'
@@ -18,4 +19,6 @@ const app = createApp(App)
 
 // app.use(router)
 app.use(vuetify)
+app.use(VueTheMask);
 app.mount('#app')
+
